@@ -340,7 +340,7 @@ class BotKeyboard:
             for protocol, inbounds in xray.config.inbounds_by_protocol.items():
                 keyboard.add(
                     types.InlineKeyboardButton(
-                        text=f"🌐 {protocol.upper()} {'✅' if protocol in selected_protocols else '❌'}",
+                        text=f"🌐 {protocol.upper()}{'❌' if protocol not in selected_protocols else '✅'}",
                         callback_data=f'select_protocol:{protocol}:{action}'
                     )
                 )
